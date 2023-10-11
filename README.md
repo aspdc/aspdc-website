@@ -19,11 +19,11 @@ Join our club and be part of a vibrant coding community. Connect with us on the 
 
 ## Getting Started
 
-To get started with contributing to ASPDC, please refer to our [Contributing Guidelines](CONTRIBUTING.md). This document provides detailed information on how you can contribute to our project.
+To get started with contributing to ASPDC, please refer to our [Contributing Guidelines](https://github.com/aspdc/aspdc-website/blob/main/Contributing.md). This document provides detailed information on how you can contribute to our project.
 
 ## Code of Conduct
 
-ASPDC is committed to providing an inclusive and respectful environment for all members and contributors. Please review our [Code of Conduct](https://github.com/aspdc/aspdc-website/blob/main/Contributing.md) to understand the standards of behavior and interaction expected within our community.
+ASPDC is committed to providing an inclusive and respectful environment for all members and contributors. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the standards of behavior and interaction expected within our community.
 
 ## License
 
