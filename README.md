@@ -1,7 +1,5 @@
 # ASPDC (Adani Student Programming and Development Club)
 
-![ASPDC Logo](https://example.com/aspdc-logo.png)
-
 ASPDC, the Adani Student Programming and Development Club, is a dynamic and student-driven community dedicated to fostering a passion for coding. Whether you're interested in data structures and algorithms, web development, or any other coding genre, ASPDC is the place for you. We organize a variety of online and offline events to promote learning and collaboration.
 
 ## About Us
@@ -25,7 +23,7 @@ To get started with contributing to ASPDC, please refer to our [Contributing Gui
 
 ## Code of Conduct
 
-ASPDC is committed to providing an inclusive and respectful environment for all members and contributors. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the standards of behavior and interaction expected within our community.
+ASPDC is committed to providing an inclusive and respectful environment for all members and contributors. Please review our [Code of Conduct](https://github.com/aspdc/aspdc-website/blob/main/Contributing.md) to understand the standards of behavior and interaction expected within our community.
 
 ## License
 
