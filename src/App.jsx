@@ -3,7 +3,7 @@ import Home from './templates/Home'
 import Events from './templates/Events'
 import Gallery from './templates/Gallery'
 import Projects from './templates/Projects'
-import LeaderBoard from './templates/LeaderBoard'
+import LeaderBoard from './templates/Leaderboard'
 import Resources from './templates/Resources'
 import Navbar from './components/Navbar'
 
