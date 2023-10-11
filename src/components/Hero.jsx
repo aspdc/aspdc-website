@@ -19,7 +19,7 @@ export default function Heroo() {
     },[])
     useEffect(()=>{
         check ? 
-        setNavbar("-translate-y-10") : setNavbar("w-fit m-auto mt-[1%]")
+        setNavbar("-translate-y-10") : setNavbar("w-fit m-auto")
     },[check])
 
     const scrollToAboutUs=()=>{

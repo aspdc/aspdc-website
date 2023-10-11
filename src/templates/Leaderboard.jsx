@@ -4,7 +4,7 @@ export default function Leaderboard() {
     return(
         <div className="leaderboard">
             <div className="w-fit m-auto mt-[1%] h-full" >
-                <Navbar/>
+                
             </div>
             <div className="h-full">
 
