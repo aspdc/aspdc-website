@@ -2,6 +2,7 @@
 
 import React,{useEffect,useState,useRef} from 'react'
 import Navbar from "../components/Navbar"
+import DownArrow from './DownArrow'
 
 
 export default function Hero() {
@@ -55,7 +56,7 @@ export default function Hero() {
                     <div className="font-poppins mt-[20%] text-[20px] -translate-y-[100%]">
                         Where Passion meets Programming
                     </div>
-                    <div onClick={scrollToAboutUs} className="flex-col gap-12 m-auto w-fit mt-[50%] animate-bounce opacity-25 hover:cursor-pointer">
+                    {/* <div onClick={scrollToAboutUs} className="flex-col gap-12 m-auto w-fit mt-[50%] animate-bounce opacity-25 hover:cursor-pointer">
                         <div className="text-[30px] top-8 font-light w-min m-auto ">
                             <div className="flex translate-y-6">
                                 <div className="-rotate-[25deg]">
@@ -85,6 +86,10 @@ export default function Hero() {
                                 </div>
                             </div>
                         </div>
+                    </div> */}
+                    <div onClick={scrollToAboutUs}>
+                        <DownArrow/>
+
                     </div>
                 </div>
             </div>

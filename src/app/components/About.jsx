@@ -1,9 +1,15 @@
 "use client"
 import React from "react";
 import {useState, useRef ,useEffect} from "react";
+import { Poppins } from "next/font/google";
+
+const poppins=Poppins({
+    subsets: ['latin'],
+    weight: ["400","500","600","700"],
+})
 
 export default function About(){
-    const [check,setCheck]=useState(false)
+    const [check,setCheck]=useState(false) 
 
     // const myRef=useRef()
     // useEffect(()=>{
@@ -17,8 +23,8 @@ export default function About(){
 
     return(
         <div>
-            <div className="h-screen z-10 w-[50%] text-[120%] font-poppins m-auto">
-                <div className="about-us m-auto font-poppins text-[330%] font-medium w-fit mt-24">
+            <div className={`h-screen z-10 w-[50%] text-[120%] ${poppins.className} m-auto`}>
+                <div className="about-us m-auto text-[330%] font-regular  w-fit mt-24">
                     About Us
                 </div>
                 <div className="mt-[5%]">
