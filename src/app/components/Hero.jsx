@@ -1,9 +1,10 @@
+"use client"
+
 import React,{useEffect,useState,useRef} from 'react'
 import Navbar from "../components/Navbar"
-import { Link } from "react-router-dom"
 
 
-export default function Heroo() {
+export default function Hero() {
     const [navbar,setNavbar]=useState("w-fit ")
     const [check,setCheck]=useState(false)
 
@@ -28,7 +29,7 @@ export default function Heroo() {
 
     
     return(
-        <div className="home p-0 m-0 h-screen">
+        <div className="home p-0 m-0 h-screen bg-black " >
             <div className="bg-[#4D2E00] opacity-50">
                 <img src="https://i.ibb.co/gDc2wCw/Coding.jpg" className='w-full h-screen object-cover m-0 p-0 opacity-70' alt=""/>
             </div>

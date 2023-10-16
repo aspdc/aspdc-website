@@ -1,6 +1,8 @@
+"use client"
+
 import {useRef,useEffect,useState } from "react"
-import { Link } from "react-router-dom"
 import {AiFillFacebook,AiFillInstagram,AiOutlineTwitter} from "react-icons/ai"
+import Link from "next/link"
 
 export default function MemberCard(props){
 
@@ -52,13 +54,13 @@ export default function MemberCard(props){
                             <p className="text-sm font-semibold">{props.position}</p>
                         </div>
                         <div className="flex h-12 gap-20 mt-[12%] opacity-50 ">
-                            <Link to={props.contact} >
+                            <Link href={props.contact}  >
                                 <AiFillInstagram style={{ fontSize:'30px'}}/>
                             </Link>
-                            <Link to={props.facebook} >
+                            <Link href={props.facebook} >
                                 <AiFillFacebook style={{ fontSize:'30px'}}/>
                             </Link>
-                            <Link to={props.email}>
+                            <Link href={props.email}>
                                 <AiOutlineTwitter style={{ fontSize:'30px' }}/>
                             </Link>
                         </div>
