@@ -12,7 +12,7 @@ export default function Navbar() {
                 <div className="logo text-[40px] text-[#00CA08] animate-pulse font-regular ">
                     {"</>"}
                 </div>
-                <div className=" font-poppins text-gray-300 flex gap-10 items-center font-bold">
+                <div className=" font-poppins text-gray-300 flex gap-10 items-center font-regular">
                     <Link href="/" className="hover:text-white  duration-200" id="home" onClick={currentPage} to='/'>Home</Link>
                     <Link href="/pages/events" className="hover:text-white duration-200" id="events" onClick={currentPage}  to='/events'>Events</Link>
                     <Link href="/pages/resources" className="hover:text-white duration-200" id="resources" onClick={currentPage}  to='/resources'>Resources</Link>
