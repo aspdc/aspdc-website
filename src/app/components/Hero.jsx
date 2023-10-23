@@ -14,7 +14,7 @@ export default function Hero() {
         const observer=new IntersectionObserver((entries)=>{
             const entry=entries[0]
             setCheck(entry.isIntersecting)
-            console.log(entry)
+            // console.log(entry)
 
         })
         observer.observe(myRef.current)
@@ -25,7 +25,7 @@ export default function Hero() {
     },[check])
 
     const scrollToAboutUs=()=>{
-        myRef.current.scrollIntoView({behavior:'smooth'})
+        myRef.current?.scrollIntoView({behavior:'smooth'})
     }
 
     
@@ -56,40 +56,8 @@ export default function Hero() {
                     <div className="font-poppins mt-[20%] text-[20px] -translate-y-[100%]">
                         Where Passion meets Programming
                     </div>
-                    {/* <div onClick={scrollToAboutUs} className="flex-col gap-12 m-auto w-fit mt-[50%] animate-bounce opacity-25 hover:cursor-pointer">
-                        <div className="text-[30px] top-8 font-light w-min m-auto ">
-                            <div className="flex translate-y-6">
-                                <div className="-rotate-[25deg]">
-                                    \
-                                </div>  
-                                <div className="translate-x-3 rotate-[25deg]">
-                                    /
-                                </div>
-                            </div>
-                        </div>
-                        <div className="text-[30px] flex top-8 font-light  w-min m-auto">
-                            <div className="-rotate-[25deg]">
-                                \
-                            </div>  
-                            <div className="translate-x-3 rotate-[25deg]">
-                                /
-                            </div>
-                        </div>
-                        <div className="text-[30px] flex top-8 font-light  w-min m-auto">
-                            <div className="flex -translate-y-6">
-
-                                <div className="-rotate-[25deg]">
-                                    \
-                                </div>  
-                                <div className="translate-x-3 rotate-[25deg]">
-                                    /
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-                    <div onClick={scrollToAboutUs}>
+                    <div onClick={scrollToAboutUs} >
                         <DownArrow/>
-
                     </div>
                 </div>
             </div>

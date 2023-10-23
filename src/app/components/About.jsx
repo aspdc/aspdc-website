@@ -5,21 +5,20 @@ import { Poppins } from "next/font/google";
 
 const poppins=Poppins({
     subsets: ['latin'],
-    weight: ["400","500","600","700"],
+    weight: ["300"],
 })
 
 export default function About(){
     const [check,setCheck]=useState(false) 
 
-    // const myRef=useRef()
-    // useEffect(()=>{
-    //     const observer=new IntersectionObserver((entries)=>{
-    //         const entry=entries[0]
-    //         setCheck(entry.isIntersecting)
-    //         console.log("about check",entry)
-    //     })
-    //     observer.observe(myRef.current)
-    // },[])
+    const scrollToTeam=()=>{
+        window.scrollTo({
+            top:window.innerHeight,
+            behavior:"smooth"
+        })
+    }
+
+
 
     return(
         <div>
@@ -36,17 +35,17 @@ export default function About(){
                         ASPDC! 
                     </span>
                 </div>
-                <div className="text-center text-[330%] mt-[45%] font-poppins">
+                <div className="text-center text-[330%] mt-[45%] font-poppins " onClick={scrollToTeam} > 
                     Meet The Team
                 </div>
                 <div className="w-[50%] m-auto"> 
-                <hr />
-
+                    <hr />
                 </div>
                 <div className="text-center mt-[1%]">
                     Club ASPD
                 </div>
             </div>
+
         </div>
         
     )

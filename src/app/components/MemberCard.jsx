@@ -3,39 +3,41 @@
 import {useRef,useEffect,useState } from "react"
 import {AiFillFacebook,AiFillInstagram,AiOutlineTwitter} from "react-icons/ai"
 import Link from "next/link"
+import { useInView } from "react-intersection-observer"
 
 export default function MemberCard(props){
 
-    const card=useRef()
-    const [style,setStyle]=useState("flip-inner relative h-full duration-1000 shadow-lg [transform-style:preserve-3d] ")
+    const [style,setStyle]=useState("flip-inner relative h-full duration-300 shadow-lg [transform-style:preserve-3d] ")
     const [once,setOnce]=useState(false)
-    useEffect(()=>{
-        const observer=new IntersectionObserver((entries)=>{
-            const entry=entries[0]
-            console.log("card check",entry)
-            if(entry.isIntersecting){
-                setOnce(true)
-                console.log(once,"once")
-                setStyle("flip-inner relative duration-1000 shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
-            }
-            else if (!entry.isIntersecting){
-                console.log(once,"once")
-                setStyle("flip-inner relative [transform-style:preserve-3d]")
-            }
-            // else{
-            //     setStyle("flip-inner relative duration-1000 shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
-            // }
-        })
-        observer.observe(card.current)
-    }
-    ,[])
-    useEffect(()=>{
-        if(once){
-            setStyle("flip-inner relative duration-1000 shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
-        }
-    },[once])
-
-
+    const { card, inView, entry } = useInView({
+        /* Optional options */
+        threshold: 0,
+      });
+    
+    // useEffect(()=>{
+    //     const observer=new IntersectionObserver((entries)=>{
+    //         const entry=entries[0]
+    //         if(entry.isIntersecting){
+    //             setOnce(true)
+    //             setStyle("flip-inner relative duration-300 shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
+    //         }
+    //         else if (!entry.isIntersecting){
+    //             if (once) {
+    //                 setStyle("flip-inner relative duration-300 shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
+    //             }
+    //             else{
+    //                 setStyle("flip-inner relative duration-300 shadow-sm [transform:rotateY(0deg)] [transform-style:preserve-3d]")
+    //             }
+    //         }
+    //     })
+    //     observer.observe(card.current)
+    // }
+    // ,[])
+    // useEffect(()=>{
+    //     if(once){
+    //         setStyle("flip-inner relative shadow-sm duration-300 [transform:rotateY(180deg)] [transform-style:preserve-3d]")
+    //     }
+    // },[once])
 
     return(
         <div className="font-poppins h-72 w-72 ml-[26%] ">
