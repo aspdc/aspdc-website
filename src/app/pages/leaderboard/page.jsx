@@ -1,39 +1,57 @@
-
-import { Button } from "@mui/material"
+"use client"
+import { useState } from "react"
+import { Button,InputLabel,Select,MenuItem,FormControl } from "@mui/material"
 import Register from "../../components/Register"
-import { createClient } from "@supabase/supabase-js"
-import {cookies} from "next/headers"
+import supabase from "../../../../supabase"
+import Navbar from "../../components/Navbar"
 
-
-export default async function Leaderboard() {
+export default function Leaderboard() {
     
-    const cookieStore = cookies()
+    
+    const fetchUsers = async () => {
+        const res = await supabase
+        .from('users')
+        .select('*')
+        console.log(res.data)
+    }
+    
+    const [platform,setPlatform] = useState("Codeforces")
 
-    const users=cookieStore.get("users")
+    const selectPlatform = (e) => {
+        console.log(e.target.value)
+        setPlatform(e.target.value)
+    }
 
-    return cookieStore.getAll().map((cookie) => (
-        <div key={cookie.name}>
-          <p>Name: {cookie.users}</p>
-          <p>Value: {cookie.value}</p>
+    return(
+        <div className=" m-auto">
+            <Navbar/>
+            <div className="flex w-full  mt-[4%] justify-between">
+                <div className="w-full" >
+                    <FormControl className="w-[20%]" >
+                        <InputLabel id="demo-simple-select-label">platform</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            label="Platform"
+                            defaultValue={"Codechef"}
+                            onChange={selectPlatform}
+                            value={platform}
+                            >
+                            <MenuItem value={"Codechef"}>Codechef</MenuItem>
+                            <MenuItem value={"Codeforces"}>Codeforces</MenuItem>
+                            <MenuItem value={"leetcode"}>leetcode</MenuItem>
+                            <MenuItem value={"hackerrank"}>hackerrank</MenuItem>
+                            <MenuItem value={"hackerearth"}>hackerearth</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <div>
+                    <Button type="outlined-filled" onClick={fetchUsers} className="bg-blue-600 text-white" >
+                        Register
+                    </Button>
+                </div>
+            </div>
+        
         </div>
-      ))
-
-    // return(
-    //     <div className="">
-    //         <div className="w-fit m-auto mt-[1%] h-full" >
-                
-    //         </div>
-    //         <div className="h-full">
-
-    //         </div>
-    //         <Register/>
-    //         <Button type="outlined-filled" className="bg-blue-600 text-white" >
-    //             GO
-    //         </Button>
-    //         <div>
-    //             users
-    //             {users}
-    //         </div>
-    //     </div>
-    // )
+    )
 }
