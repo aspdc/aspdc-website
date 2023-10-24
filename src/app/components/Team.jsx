@@ -1,5 +1,3 @@
-"use client"
-import {useRef,useEffect,useState } from "react"
 import MemberCard from "./MemberCard"
 import Footer from "./Footer"
 

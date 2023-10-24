@@ -1,4 +1,3 @@
-"use client"
 export default function SingleArrow() {
     return(
         <div className="text-[30px] font-light w-min ">

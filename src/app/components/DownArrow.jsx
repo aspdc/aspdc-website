@@ -1,4 +1,3 @@
-"use client"
 import SingleArrow from "./SingleArrow"
 
 export default function DownArrow(){

@@ -1,12 +1,9 @@
-"use client"
 import React from "react";
-import {useState, useRef ,useEffect} from "react";
 import {poppins} from "../page"
 
 
 
 export default function About(){
-    const [check,setCheck]=useState(false) 
 
     const scrollToTeam=()=>{
         window.scrollTo({
