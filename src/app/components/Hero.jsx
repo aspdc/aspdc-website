@@ -3,47 +3,32 @@
 import React,{useEffect,useState,useRef} from 'react'
 import Navbar from "../components/Navbar"
 import DownArrow from './DownArrow'
-
+import { useInView } from 'react-intersection-observer'
 
 export default function Hero() {
-    const [navbar,setNavbar]=useState("w-fit ")
-    const [check,setCheck]=useState(false)
 
     const myRef=useRef()
-    useEffect(()=>{
-        const observer=new IntersectionObserver((entries)=>{
-            const entry=entries[0]
-            setCheck(entry.isIntersecting)
-            // console.log(entry)
-
-        })
-        observer.observe(myRef.current)
-    },[])
-    useEffect(()=>{
-        check ? 
-        setNavbar("-translate-y-10") : setNavbar("w-fit m-auto")
-    },[check])
-
     const scrollToAboutUs=()=>{
         myRef.current?.scrollIntoView({behavior:'smooth'})
     }
 
-    
+
+
     return(
         <div className="home p-0 m-0 h-screen bg-black " >
             <div className="bg-[#4D2E00] opacity-50">
                 <img src="https://i.ibb.co/gDc2wCw/Coding.jpg" className='w-full h-screen object-cover m-0 p-0 opacity-70' alt=""/>
             </div>
             <div className="absolute top-0 w-[75%] left-[12%] ">
-                <div className={navbar}>
+                <div className={"w-fit m-auto"}>
                     <Navbar/>
                 </div>
-                <div className="w-fit mt-[7%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
+                <div className="w-fit mt-[2%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
                     <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                         {"</>"}
                     </div>
                     <div className="-translate-y-[35%]">
-                        <div className="font-katibeh text-[200%] opacity-70">
+                        <div className="font-katibeh text-[200%] opacity-70"  > 
                             Coding Club
                         </div>
                         <div className="w-[40%] m-auto">
@@ -53,10 +38,10 @@ export default function Hero() {
                             ASPDC
                         </div>
                     </div>
-                    <div className="font-poppins mt-[20%] text-[20px] -translate-y-[100%]">
+                    <div className="font-poppins font-regular mt-[20%] text-[120%] -translate-y-[100%]  ">
                         Where Passion meets Programming
                     </div>
-                    <div onClick={scrollToAboutUs} >
+                    <div onClick={scrollToAboutUs} className='w-fit m-auto mt-[40%]' >
                         <DownArrow/>
                     </div>
                 </div>
