@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.15",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.3",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-intersection-observer": "^9.5.2"
+    "react-intersection-observer": "^9.5.2",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",

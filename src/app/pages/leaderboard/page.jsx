@@ -10,7 +10,6 @@ export default function Leaderboard() {
 
             </div>
             <Register/>
-            Leaderboard
         </div>
     )
 }
