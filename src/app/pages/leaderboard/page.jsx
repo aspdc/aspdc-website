@@ -1,7 +1,8 @@
-import Register from "../components/Register"
+"use client"
+import Register from "../../components/Register"
 export default function Leaderboard() {
     return(
-        <div className="leaderboard">
+        <div className="">
             <div className="w-fit m-auto mt-[1%] h-full" >
                 
             </div>
@@ -9,7 +10,6 @@ export default function Leaderboard() {
 
             </div>
             <Register/>
-            Leaderboard
         </div>
     )
 }

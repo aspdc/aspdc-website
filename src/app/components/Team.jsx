@@ -7,9 +7,9 @@ import Footer from "./Footer"
 export default function Team(){
 
     return (
-        <div className="h-fit">
+        <div className="">
 
-            <div className="grid-cols-3 grid gap-44 w-[80%] m-auto ">
+            <div className="grid-cols-3 h-full grid gap-44 w-[80%] m-auto ">
 
                 <MemberCard 
                     name="Devvrat Singh"
@@ -92,9 +92,10 @@ export default function Team(){
                     contact="tel:+91 9876543210"
                     
                     />
+                <div className="">
+                    <Footer/>
                 </div>
-            <Footer/>
-
+            </div>
         </div>
     )
 }
