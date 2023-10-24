@@ -1,10 +1,7 @@
 import Link from "next/link"
 export default function Navbar() {
-    
-
-
     return(
-        <div className="gap-72 w-fit translate-y-[30%] m-auto text-gray-300 flex item-center">
+        <div className="gap-96 justify-between w-fit translate-y-[30%] m-auto text-gray-300 flex item-center">
                 <div className="logo text-[40px] text-[#00CA08] animate-pulse font-regular ">
                     {"</>"}
                 </div>
