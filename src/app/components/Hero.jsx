@@ -53,10 +53,10 @@ export default function Hero() {
                             ASPDC
                         </div>
                     </div>
-                    <div className="font-poppins mt-[20%] text-[20px] -translate-y-[100%]">
+                    <div className="font-poppins mt-[20%] text-[20px] -translate-y-[100%]  ">
                         Where Passion meets Programming
                     </div>
-                    <div onClick={scrollToAboutUs} >
+                    <div onClick={scrollToAboutUs} className='w-fit m-auto mt-[40%]' >
                         <DownArrow/>
                     </div>
                 </div>

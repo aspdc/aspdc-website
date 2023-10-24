@@ -1,12 +1,9 @@
 "use client"
 import React from "react";
 import {useState, useRef ,useEffect} from "react";
-import { Poppins } from "next/font/google";
+import {poppins} from "../page"
 
-const poppins=Poppins({
-    subsets: ['latin'],
-    weight: ["300"],
-})
+
 
 export default function About(){
     const [check,setCheck]=useState(false) 
