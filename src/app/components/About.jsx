@@ -1,7 +1,4 @@
 import {poppins} from "../page"
-
-
-
 export default function About(){
 
     const scrollToTeam=()=>{
@@ -14,8 +11,7 @@ export default function About(){
 
 
     return(
-        <div>
-            <div className={`h-fit z-10 w-[50%] text-[100%] ${poppins.className} m-auto`}>
+            <div className={`h-fit w-[50%] text-[100%] ${poppins.className} m-auto`}>
                 <div className="about-us m-auto text-[330%] font-regular  w-fit mt-24">
                     About Us
                 </div>
@@ -28,7 +24,7 @@ export default function About(){
                         ASPDC! 
                     </span>
                 </div>
-                <div className="text-center text-[330%] mt-[45%] m-auto font-poppins " onClick={scrollToTeam} > 
+                <div className="text-center text-[330%] mt-[50%] m-auto font-poppins " onClick={scrollToTeam} > 
                     Meet The Team
                 </div>
                 <div className="w-[50%] m-auto"> 
@@ -38,8 +34,6 @@ export default function About(){
                     Club ASPD
                 </div>
             </div>
-
-        </div>
         
     )
 }
