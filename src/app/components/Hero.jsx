@@ -4,6 +4,7 @@ import React,{useEffect,useState,useRef} from 'react'
 import Navbar from "../components/Navbar"
 import DownArrow from './DownArrow'
 import { useInView } from 'react-intersection-observer'
+import About from './About'
 
 export default function Hero() {
 
@@ -15,6 +16,9 @@ export default function Hero() {
 
 
     return(
+        <div>
+
+
         <div className="home p-0 h-screen bg-black" >
             <div className="bg-[url('../../public/assets/images/Coding-low-brightness.jpg')] m-auto h-full bg-cover ">
                     <Navbar 
@@ -35,19 +39,27 @@ export default function Hero() {
                             <div className="text-[150%] font-thin ">
                                 ASPDC
                             </div>
+
                         </div>
-                        <div className="font-poppins font-regular mt-[20%] text-[150%] -translate-y-[100%]  ">
-                            Where Passion meets Programming
+                        <div className="w-[40%] m-auto">
+                            <hr />
                         </div>
-                        <div onClick={scrollToAboutUs} className='w-fit m-auto mt-[40%]' >
-                            <DownArrow/>
+                        <div className="text-[150%] font-thin ">
+                            ASPDC
                         </div>
                     </div>
+                    <div className="font-poppins font-regular mt-[20%] text-[150%] -translate-y-[100%]  ">
+                        Where Passion meets Programming
+                    </div>
+                    <div onClick={scrollToAboutUs} className='w-fit m-auto mt-[40%]' >
+                        <DownArrow/>
+                    </div>
+                </div>
             </div>
-            <div className='mt-1 h-screen z-0 float opacity-0' ref={myRef}>
-                <hr />
-
-            </div>
+        </div>
+        <div ref={myRef}>
+            <About/>
+        </div> 
         </div>
     )
     }
