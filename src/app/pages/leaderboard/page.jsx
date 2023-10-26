@@ -61,44 +61,45 @@ export default function Leaderboard() {
 
 
     return(
-        <div className="w-full h-screen">
+        <div className="w-fit h-screen">
 
-            <div className="w-fit m-auto text-black  ">
-                <Navbar 
-                    textColour="text-black"
-                    hoverColour="text-blue"
-                />
-                <div className="flex mt-[4%] justify-between">
-                    <div className="w-full" >
-                        <FormControl className="w-[20%]" >
-                            <InputLabel id="demo-simple-select-label">platform</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                label="Platform"
-                                defaultValue={"Codechef"}
-                                onChange={selectPlatform}
-                                value={platform}
-                                >
-                                <MenuItem value={"Codechef"}>Codechef</MenuItem>
-                                <MenuItem value={"Codeforces"}>Codeforces</MenuItem>
-                                <MenuItem value={"leetcode"}>leetcode</MenuItem>
-                                <MenuItem value={"hackerrank"}>hackerrank</MenuItem>
-                                <MenuItem value={"hackerearth"}>hackerearth</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                    <div>
-                        <Link href={"/pages/leaderboard/register"} >
-                            <Button type="outlined-filled" className="bg-blue-600 text-white" >
-                                Register
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
+            <div className="w-min m-auto text-black  ">
                 <div>
-                    {/* <Button  onClick={fetchUsers} > fetchUsers </Button> */}
-                    <div className={`${poppins.className} text-center `}>
+                    <Navbar 
+                        textColour="text-white"
+                        hoverColour="text-blue"
+                        />
+                </div>
+                <div className={`${poppins.className} text-center w-fit m-auto`}>
+                    <div className="flex mt-[4%] m-auto justify-between">
+                        <div className="w-fit" >
+                            <FormControl className="" >
+                                <InputLabel id="demo-simple-select-label">platform</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    label="Platform"
+                                    defaultValue={"Codechef"}
+                                    onChange={selectPlatform}
+                                    value={platform}
+                                    >
+                                    <MenuItem value={"Codechef"}>Codechef</MenuItem>
+                                    <MenuItem value={"Codeforces"}>Codeforces</MenuItem>
+                                    <MenuItem value={"leetcode"}>leetcode</MenuItem>
+                                    <MenuItem value={"hackerrank"}>hackerrank</MenuItem>
+                                    <MenuItem value={"hackerearth"}>hackerearth</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div>
+                            <Link href={"/pages/leaderboard/register"} >
+                                <Button type="outlined-filled" className="bg-[#013D00] text-white h-full hover:bg-green-500" >
+                                    Register
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="mt-[1%]">
                         <DataGrid
                             rows={rows}
                             columns={columns}

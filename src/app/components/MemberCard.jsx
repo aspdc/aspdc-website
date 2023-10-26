@@ -7,15 +7,15 @@ import { useInView } from "react-intersection-observer"
 
 export default function MemberCard(props){
 
-    const [style,setStyle]=useState("flip-inner relative h-full duration-500 shadow-lg [transform-style:preserve-3d] ")
+    const [style,setStyle]=useState("flip-inner relative h-full duration-1000 shadow-lg [transform-style:preserve-3d] ")
     const [card, inView] = useInView()
    
     useEffect(()=>{
         if(inView){
-            setStyle("flip-inner relative shadow-sm duration-500 [transform:rotateY(180deg)] [transform-style:preserve-3d]")
+            setStyle("flip-inner relative shadow-sm duration-1000 [transform:rotateY(180deg)] [transform-style:preserve-3d]")
         }
         else{
-            setStyle("flip-inner relative shadow-sm duration-500 [transform:rotateY(0deg)] [transform-style:preserve-3d]")
+            setStyle("flip-inner relative shadow-sm duration-1000 [transform:rotateY(0deg)] [transform-style:preserve-3d]")
         }
     },[inView])
 

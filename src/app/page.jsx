@@ -19,7 +19,6 @@ export default function Home() {
     return(
         <div className="h-full">
             <Hero/>
-            <About/>
             <Team/>
 
         </div>
