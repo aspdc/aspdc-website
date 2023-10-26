@@ -15,18 +15,12 @@ export default function Hero() {
 
 
     return(
-        <div className="home p-0 h-screen bg-black m-auto " >
-            {/* <div className="bg-[#4D2E00] opacity-50">
-                <img src="https://i.ibb.co/gDc2wCw/Coding.jpg" className='object-fit m-0 p-0 opacity-70' alt=""/>
-            </div> */}
-            {/* <div className="bg-[url('https://i.ibb.co/gDc2wCw/Coding.jpg')] m-auto h-screen bg-transparent bg-cover bg-local bg-no-repeat"> */}
-            <div className="bg-[url('../../public/assets/images/Coding-low-brightness.jpg')] m-auto h-screen bg-cover bg-fixed ">
-                    <div className={"w-fit m-auto"}>
-                        <Navbar 
-                            textColour='text-gray-400'
-                            hoverColour='text-white'
-                            />
-                    </div>
+        <div className="home p-0 h-screen bg-black" >
+            <div className="bg-[url('../../public/assets/images/Coding-low-brightness.jpg')] m-auto h-full bg-cover ">
+                    <Navbar 
+                        textColour='text-gray-400'
+                        hoverColour='text-black'
+                        />
                     <div className="w-fit mt-[2%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
                         <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                             {"</>"}
