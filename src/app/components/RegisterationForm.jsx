@@ -35,12 +35,40 @@ export default function RegisterationForm(){
         console.log(users,"users")
         
         const checkExistence = users.filter((user) => user.enrollment_no === data.enrollment_no)
+        const checkExistenceName = users.filter((user) => user.leetcode_handle === data.leetcode)
+        const checkExistenceCodeforces = users.filter((user) => user.codeforces_handle === data.codeforces)
+        const checkExistenceCodechef = users.filter((user) => user.codechef_handle === data.codechef)
+        const checkExistenceGithub = users.filter((user) => user.github_handle === data.github)
+
         console.log(checkExistence,"checkExistence")
+        console.log(checkExistenceName,"checkExistenceName")
+        console.log(checkExistenceCodeforces,"checkExistenceCodeforces")
+        console.log(checkExistenceCodechef,"checkExistenceCodechef")
+        console.log(checkExistenceGithub,"checkExistenceGithub")
 
         if(checkExistence.length !== 0){
             alert("User already exists")
             return
         }
+        if(checkExistenceName.length !== 0){
+            alert("Leetcode handle already exists")
+            return
+        }
+        if(checkExistenceCodeforces.length !== 0){
+            alert("Codeforces handle already exists")
+            return
+        }
+        if(checkExistenceCodechef.length !== 0){
+            alert("Codechef handle already exists")
+            return
+        }
+        if(checkExistenceGithub.length !== 0){
+            alert("Github handle already exists")
+            return
+        }
+
+        
+        alert("Welcome to the family"+" "+data.name)
 
         const {errorInsert} = await supabase
         .from('users')
