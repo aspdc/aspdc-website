@@ -5,10 +5,9 @@ import Footer from "./Footer"
 export default function Team(){
 
     return (
-        <div className="">
-
-            <div className="grid-cols-3 h-full grid gap-44 w-[80%] m-auto ">
-
+        <>
+            <div className="grid-cols-3 grid gap-44 w-screen m-auto ">
+                
                 <MemberCard 
                     name="Devvrat Singh"
                     position="Treasurer"
@@ -16,7 +15,6 @@ export default function Team(){
                     facebook="https://www.facebook.com/devvrat.singh.754/"
                     email="devvratsingh@gmail.com"
                     contact="tel:+91 9876543210"
-                    
                     />
                 <MemberCard 
                     name="Devvrat Singh"
@@ -94,6 +92,6 @@ export default function Team(){
                     <Footer/>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

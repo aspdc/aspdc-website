@@ -20,14 +20,14 @@ export default function MemberCard(props){
     },[inView])
 
     return(
-        <div className="font-poppins h-72 w-72 ml-[26%] ">
+        <div className="font-poppins h-72 w-72 m-auto">
             <div className="flip shadow-lg perspective[1000px] m-auto" >
                 <div className={style} >
-                    <div className="front [backface-visibility:hidden] h-full w-full">
+                    {/* <div className="front  h-max w-max">
                         
-                    </div>
+                    </div> */}
 
-                    <div className="back flex flex-col hover:shadow-2xl justify-center items-center gap-2 h-fit w-96 text-center  bg-blue absolute [backface-visibility:hidden] [transform:rotateY(180deg)] " ref={card}>
+                    <div className="back flex m-auto flex-col hover:shadow-2xl justify-center items-center gap-2 h-fit w-96 text-center  bg-blue absolute [backface-visibility:hidden] [transform:rotateY(180deg)] " ref={card}>
                         <div>
                             <img src={props.img} className="rounded-full m-auto mt-12" alt="" />                    
                         </div>

@@ -17,15 +17,16 @@ export default function Hero() {
 
     return(
         <div>
-
-
-        <div className="home p-0 h-screen bg-black" >
-            <div className="bg-[url('../../public/assets/images/Coding-low-brightness.jpg')] m-auto h-full bg-cover ">
-                    <Navbar 
-                        textColour='text-gray-400'
-                        hoverColour='text-black'
-                        />
-                    <div className="w-fit mt-[2%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
+        <div>
+        <div className="home p-0 h-screen bg-white" >
+            <div className="m-auto h-full">
+                    <div>
+                        <Navbar 
+                            textColour='text-gray-400'
+                            hoverColour='text-black'
+                            />
+                    </div>
+                    <div className="w-fit mt-[2%] m-auto flex-col text-black text-center translate-y-[13%] delay-500">
                         <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                             {"</>"}
                         </div>
@@ -41,25 +42,19 @@ export default function Hero() {
                             </div>
 
                         </div>
-                        <div className="w-[40%] m-auto">
-                            <hr />
+                        <div className="font-poppins font-regular mt-[20%] text-[150%] -translate-y-[100%]  ">
+                            Where Passion meets Programming
                         </div>
-                        <div className="text-[150%] font-thin ">
-                            ASPDC
+                        <div onClick={scrollToAboutUs} className='w-fit m-auto' >
+                            <DownArrow/>
                         </div>
-                    </div>
-                    <div className="font-poppins font-regular mt-[20%] text-[150%] -translate-y-[100%]  ">
-                        Where Passion meets Programming
-                    </div>
-                    <div onClick={scrollToAboutUs} className='w-fit m-auto mt-[40%]' >
-                        <DownArrow/>
                     </div>
                 </div>
             </div>
         </div>
-        <div ref={myRef}>
-            <About/>
-        </div> 
+            <div ref={myRef}>
+                <About/>
+            </div> 
         </div>
     )
     }

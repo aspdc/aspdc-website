@@ -17,7 +17,7 @@ export default function Home() {
     }, [])
 
     return(
-        <div className="h-full p-0">
+        <div className="w-screen p-0">
             <Hero/>
             <Team/>
 
