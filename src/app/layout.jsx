@@ -13,9 +13,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-
-        <html lang="en">
-            <body className={`p-0 m-0 w-screen h-[100%] overflow-x-hidden ${inter.className}`}>
+        <html lang="en" >
+            <body className={`w-screen h-screen p-0 m-0 overflow-x-hidden ${inter.className}`}>
                 {children}
             </body>
         </html>
