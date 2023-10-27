@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { UserButton } from "@clerk/nextjs";
 export default function Navbar(props) {
     const style=`hover:${props.hoverColour} duration-200`
     const aah="text-white"
@@ -15,6 +16,7 @@ export default function Navbar(props) {
                     <Link href="/pages/gallery" className={style} id="gallery"  >Gallery</Link>
                     <Link href="/pages/projects" className={style} id="projects"  >Projects</Link>
                     <Link href="/pages/leaderboard" className={style} id="leaderboard" >Leaderboard</Link>
+                    <UserButton afterSignedOutUrl="/" />
                 </div>
             </div>
         </div>

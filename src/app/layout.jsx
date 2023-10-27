@@ -1,6 +1,6 @@
 import './globals.css'
 import Navbar from './components/Navbar'
-
+import { ClerkProvider } from '@clerk/nextjs'
 import { Inter,Poppins,Bebas_Neue, } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -12,10 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
+
         <html lang="en">
             <body className={`w-screen h-screen p-0 overflow-x-hidden ${inter.className}`}>
                 {children}
             </body>
         </html>
+    </ClerkProvider>
   )
 }
