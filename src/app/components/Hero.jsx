@@ -12,9 +12,6 @@ export default function Hero() {
     const scrollToAboutUs=()=>{
         myRef.current?.scrollIntoView({behavior:'smooth'})
     }
-
-
-
     return(
         <div>
         <div>
@@ -45,6 +42,7 @@ export default function Hero() {
                         <div className="font-poppins font-regular mt-[20%] text-[150%] -translate-y-[100%]  ">
                             Where Passion meets Programming
                         </div>
+
                         <div onClick={scrollToAboutUs} className='w-fit m-auto' >
                             <DownArrow/>
                         </div>

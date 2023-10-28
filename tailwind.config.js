@@ -7,12 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-        'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        "hero-pattern":"url('https://i.ibb.co/gDc2wCw/Coding.jpg')",
-      },
+      animation: {
+        'spin-slow': 'spin 1.2s linear infinite',
+      }
     },
   },
   plugins: [],

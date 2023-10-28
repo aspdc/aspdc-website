@@ -10,12 +10,9 @@ export const poppins=Poppins({
     subsets: ['latin'],
     weight: ["300"],
 })
+
+
 export default function Home() {
-
-    useEffect(() => {
-        localStorage.getItem('currentPage') 
-    }, [])
-
     return(
         <div className="w-screen p-0">
             <Hero/>

@@ -1,5 +1,10 @@
 import {poppins} from "../page"
 export default function About(){
+    
+    if (typeof window !== 'undefined') {
+        const hehe=localStorage.getItem("users")
+        console.log(JSON.parse(hehe),"hehe")
+    }
 
     const scrollToTeam=()=>{
         window.scrollTo({
@@ -7,9 +12,6 @@ export default function About(){
             behavior:"smooth"
         })
     }
-
-
-
     return(
             <div className={`h-fit w-[50%] text-[100%] ${poppins.className} m-auto`}>
                 <div className="about-us m-auto text-[330%] font-regular  w-fit ">

@@ -14,18 +14,18 @@ export default function Codeforces(){
     const fetchUsers = async () => {
         const res = await supabase
         .from('users')
-        .select('enrollment_no,codeforces_handle')
-        // console.log(res.data,"res")
+        .select('*')
         setUsers(res.data)
 
 
-        for (let i = 0; i < res.data.length-1; i++) {
+        localStorage.setItem("users",JSON.stringify((res.data)))
+
+        for (let i = 0; i < res.data.length; i++) {
             const element = res.data[i];
             console.log(element,"element")
-            const fetchingCodeForcesData=await fetch("https://codeforces.com/api/user.info?handles="+element.codeforces_handle)
+            const fetchingCodeForcesData=await fetch("https://codeforces.com/api/user.info?handles="+element.codeforces_handle,{ cache: 'force-cache' })
             const check2=await fetchingCodeForcesData.json()
             const check3=check2.result
-            console.log(check3[0],"check3")
             check3[0]["enrollment_no"]=element.enrollment_no
             if(element.codeforces_handle){
                 cfData.push(check3[0])
@@ -33,7 +33,6 @@ export default function Codeforces(){
         }
         console.log(cfData,"cfData")
         setCf(cfData)
-
     }
     
 
@@ -59,10 +58,8 @@ export default function Codeforces(){
     }))
 
     return(
-        <div>
-            <div onClick={fetchUsers}>
-                COdeforces
-            </div>
+        <div className='w-fit m-auto'>
+
                 <DataGrid
                     rows={rows}
                     columns={columns}

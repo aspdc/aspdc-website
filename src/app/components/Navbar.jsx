@@ -5,10 +5,10 @@ import { useUser } from "@clerk/nextjs";
 
 export default function Navbar(props) {
     const style=`hover:text-white duration-200`
-    const aah="text-white"
-
     const {isSignedIn,user} = useUser();
-// changed to aspdc
+
+
+
 
     return(
         // <div className="bg-[#013D00]">
@@ -26,7 +26,7 @@ export default function Navbar(props) {
                     <Link href="/pages/projects" className={style} id="projects"  >Projects</Link>
                     <Link href="/pages/leaderboard" className={style} id="leaderboard" >Leaderboard</Link>
                 </div>
-                <div>
+                <div className="flex items-center">
 
                 { (isSignedIn) &&
                     <div className="items-center h-16 flex absolute right-[2%]">
@@ -41,7 +41,7 @@ export default function Navbar(props) {
                 {
                     (!isSignedIn) && 
                     <Link href={"/pages/sign-in"} >
-                        <div className="w-fit text-gray-300 px-[30%] flex  ">
+                        <div className="w-fit  text-gray-300 px-[30%] flex  ">
                             Login
                             <BiLogIn className="border-4 border-hidden m-auto text-[120%]"/>
                         </div>
@@ -49,6 +49,5 @@ export default function Navbar(props) {
                 }
                 </div>
             </div>
-        // </div>
     )
 }
