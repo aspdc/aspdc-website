@@ -4,21 +4,36 @@ import supabase from '../../../../supabase';
 
 export default function Codeforces(){
 
-    const [cf,setCf]=useState()
+    const [cf,setCf]=useState([])
     const [usernames,setUsernames]=useState([])
     const [users,setUsers]=useState([])
+
+
+    let cfData=[]
 
     const fetchUsers = async () => {
         const res = await supabase
         .from('users')
-        .select('codeforces_handle')
-        console.log(res.data,"res")
-        setCf(res.data)
-        
-        const temp=res.data.map(async (user,key) => {
-            const info = await fetch(`https://codeforces.com/api/user.info?handles=${user.codeforces_handle}`)
-            console.log(info,"temp")
-        })
+        .select('enrollment_no,codeforces_handle')
+        // console.log(res.data,"res")
+        setUsers(res.data)
+
+
+        for (let i = 0; i < res.data.length-1; i++) {
+            const element = res.data[i];
+            console.log(element,"element")
+            const fetchingCodeForcesData=await fetch("https://codeforces.com/api/user.info?handles="+element.codeforces_handle)
+            const check2=await fetchingCodeForcesData.json()
+            const check3=check2.result
+            console.log(check3[0],"check3")
+            check3[0]["enrollment_no"]=element.enrollment_no
+            if(element.codeforces_handle){
+                cfData.push(check3[0])
+            }
+        }
+        console.log(cfData,"cfData")
+        setCf(cfData)
+
     }
     
 
@@ -26,28 +41,34 @@ export default function Codeforces(){
         fetchUsers()
     }, [])
 
-    // const columns=[ 
-    //     {field: 'id', headerName: 'Enrollment No', width: 200},
-    //     {field: 'name', headerName: 'Name', width: 200},
-    //     {field: 'codechef', headerName: 'Codechef', width: 200},
-    //     {field: 'codeforces', headerName: 'Codeforces', width: 200},
-    //     {field: 'leetcode', headerName: 'Leetcode', width: 200},
-    //     {field: 'hackerrank', headerName: 'Hackerrank', width: 200},
-    //     {field: 'hackerearth', headerName: 'Hackerearth', width: 200},
-    // ]
-    // const rows=info.data.map((user,key) => ({
-    //     id:user.enrollment_no,
-    //     name:user.Name,
-    //     codechef:user.codechef_handle,
-    //     codeforces:user.codeforces_handle,
-    //     leetcode:user.leetcode_handle,
-    //     hackerrank:user.hackerrank_handle,
-    //     hackerearth:user.hackerearth_handle,
-    // }))
+    const columns=[ 
+        {field: 'id', headerName: 'Enrollment No', width: 200},
+        {field: 'username', headerName: 'Username', width: 200},
+        {field: 'rating', headerName: 'Rating', width: 200},
+        {field: 'rank', headerName: 'Rank', width: 200},
+        {field: 'maxRating', headerName: 'Max Rating', width: 200},
+        {field: 'maxRank', headerName: 'Max Rank', width: 200},
+    ]
+    const rows=cf.map((user,key) => ({
+        id:user.enrollment_no,
+        username:user.handle,
+        rating:user.rating,
+        rank:user.rank,
+        maxRating:user.maxRating,
+        maxRank:user.maxRank,
+    }))
 
     return(
-        <div onClick={fetchUsers}>
-            COdeforces
+        <div>
+            <div onClick={fetchUsers}>
+                COdeforces
+            </div>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]} 
+                />
         </div>
     )
 }

@@ -13,7 +13,7 @@ import { DataGrid } from '@mui/x-data-grid';
 export default function Leaderboard() {
     
     const [info,setInfo]=useState({error: "", data:[], count: "", status: "", statusText: ''})
-
+    
     const check=[]
 
     useEffect(() => {
