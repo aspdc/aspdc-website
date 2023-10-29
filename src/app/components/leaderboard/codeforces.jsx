@@ -1,40 +1,15 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect,useState } from 'react';
 import supabase from '../../../../supabase';
+import codeforcesData from '../../lib/codeforcesData'
 
 export default function Codeforces(){
 
     const [cf,setCf]=useState([])
-    const [usernames,setUsernames]=useState([])
-    const [users,setUsers]=useState([])
-
-
-    let cfData=[]
-
     const fetchUsers = async () => {
-        const res = await supabase
-        .from('users')
-        .select('*')
-        setUsers(res.data)
-
-
-        localStorage.setItem("users",JSON.stringify((res.data)))
-
-        for (let i = 0; i < res.data.length; i++) {
-            const element = res.data[i];
-            console.log(element,"element")
-            const fetchingCodeForcesData=await fetch("https://codeforces.com/api/user.info?handles="+element.codeforces_handle,{ cache: 'force-cache' })
-            const check2=await fetchingCodeForcesData.json()
-            const check3=check2.result
-            check3[0]["enrollment_no"]=element.enrollment_no
-            if(element.codeforces_handle){
-                cfData.push(check3[0])
-            }
-        }
-        console.log(cfData,"cfData")
+        const cfData=await codeforcesData()
         setCf(cfData)
-    }
-    
+    }    
 
     useEffect(() => {
         fetchUsers()

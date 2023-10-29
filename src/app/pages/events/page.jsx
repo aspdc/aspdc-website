@@ -1,13 +1,11 @@
-// import libChef from '../../lib/libChef'
-import jsonPlace from '../../api/chef/route'
+import {getData} from '../../lib/fetchUserData'
+import {getStaticProps} from '../../api/codechef'
 
 export default async function Events() {
+    
 
-    const userData=await jsonPlace()
-    console.log(userData,"userData")
-    // const data=await jsonPlace()
-    // console.log(data,"data")
-
+    const data=await fetch("http://localhost:3000/api/codechef")
+    console.log(data,"data")
 
     return(
         <div className="events">

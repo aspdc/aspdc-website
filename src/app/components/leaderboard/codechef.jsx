@@ -1,52 +1,24 @@
 'use client'
-
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect,useState } from 'react';
-import supabase from '../../../../supabase';
-import { set } from 'react-hook-form';
+import codeChef from '../../lib/codechefData'
 
-// export const getStaticProps = async () => {
-//     const res = await fetch("https://codechef-api.vercel.app/devvrat_singh2");
-//     const data = await res.json();
-//     console.log(data,"data");
-//     return {
-//         props: { userData:data }
-//     }
-// }
+export const getStaticProps = async () => {
+    const data=await fetch("https://codechef-api.vercel.app/devvrat_singh2")
+    const data2=await data.json()
+    return {
+        props: {userdata:data2}
+    }
+}
 
-const Codechef= async ()=>{
-
-
-    const [cf,setCf]=useState([])
-    const [usernames,setUsernames]=useState([])
+export default function CodeChef({userdata}){
+    
+    
     const [users,setUsers]=useState([])
-    
-    
-    let cfData=[]
-    
     const fetchUsers = async () => {
-        if (typeof window !== 'undefined') {
-            const chef=localStorage.getItem("users")
-            setUsers(JSON.parse(chef))
-        }
-        console.log((users),"chef")
-
-
-        // for (let i = 0; i < users.length; i++) {
-        //     const element = users[i];
-        //     console.log(element,"element")
-        //     const fetchingCodechefData=await fetch("https://codechef-api.vercel.app/"+element.codechef_handle)        
-        
-            // console.log(fetchingCodechefData,"fetchingCodechefData")
-            // const check2=await fetchingCodeForcesData.json()
-            // const check3=check2.result
-            // check3[0]["enrollment_no"]=element.enrollment_no
-            // if(element.codeforces_handle){
-            //     cfData.push(check3[0])
-            // }
-        // }
-        // console.log(cfData,"cfData")
-        // setCf(cfData)
+        console.log(JSON.stringify(userdata),"userdataaa")
+        // const data=await codeChef()
+        console.log("codechef dataaaaaaaaa")
     }
     
 
@@ -85,4 +57,3 @@ const Codechef= async ()=>{
         </div>
     )
 }
-export default Codechef
