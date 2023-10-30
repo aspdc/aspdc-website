@@ -15,15 +15,15 @@ export default function Hero() {
     return(
         <div>
         <div>
-        <div className="home p-0 h-screen bg-white" >
+        <div className="home p-0 h-screen bg-black" >
             <div className="m-auto h-full">
                     <div>
                         <Navbar 
-                            textColour='text-gray-400'
+                            textColour='text-gray-300'
                             hoverColour='text-black'
                             />
                     </div>
-                    <div className="w-fit mt-[2%] m-auto flex-col text-black text-center translate-y-[13%] delay-500">
+                    <div className="w-fit mt-[2%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
                         <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                             {"</>"}
                         </div>

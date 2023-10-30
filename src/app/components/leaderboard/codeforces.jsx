@@ -9,7 +9,9 @@ export default function Codeforces(){
     const fetchUsers = async () => {
         const cfData=await codeforcesData()
         setCf(cfData)
-    }    
+
+    }   
+    console.log(cf,"cf") 
 
     useEffect(() => {
         fetchUsers()

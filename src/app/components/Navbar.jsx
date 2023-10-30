@@ -29,7 +29,7 @@ export default function Navbar(props) {
                 <div className="flex items-center">
 
                 { (isSignedIn) &&
-                    <div className="items-center h-16 flex absolute right-[2%]">
+                    <div className="items-center text-white h-16 flex absolute right-[2%]">
                         <div className="">
                             <UserButton className="" afterSignedOutUrl="/" />
                         </div>

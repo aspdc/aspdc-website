@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar"
 import Link from "next/link"
 import {poppins} from "../../page"
 import Codeforces from "@/app/components/leaderboard/codeforces"
+import Leetcode from "@/app/components/leaderboard/leetcode"
 import Codechef from "@/app/components/leaderboard/codechef"
 
 
@@ -65,7 +66,7 @@ export default function Leaderboard() {
                         }
                         {
                             platform==="leetcode" &&
-                            <Codeforces/>
+                            <Leetcode/>
                         }
 
                     </div>

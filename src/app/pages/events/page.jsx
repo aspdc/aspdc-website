@@ -1,12 +1,4 @@
-import {getData} from '../../lib/fetchUserData'
-import {getStaticProps} from '../../api/codechef'
-
 export default async function Events() {
-    
-
-    const data=await fetch("http://localhost:3000/api/codechef")
-    console.log(data,"data")
-
     return(
         <div className="events">
             <div className='flex h-screen w-screen justify-center gap-10 items-center text-[300%]'>
