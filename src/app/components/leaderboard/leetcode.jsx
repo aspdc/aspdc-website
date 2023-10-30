@@ -2,12 +2,10 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect,useState } from 'react';
 import leetcode from '../../lib/leetcodeData'
-import { useNavigate } from "react-router-dom";
 
 
 export default function CodeChef(){
 
-    const navigate=useNavigate()
     
     const [users,setUsers]=useState([])
     const fetchUsers = async () => {
@@ -41,7 +39,7 @@ export default function CodeChef(){
     const clickedCell=(e)=>{
         console.log(e,"cell clicked")
         console.log(e.row.username,"usernamess")
-        navigate("https://leetcode.com/Devvrat12")
+
     }
 
     const [sortModel, setSortModel] = useState([

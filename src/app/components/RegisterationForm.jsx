@@ -30,7 +30,7 @@ export default function RegisterationForm(){
         console.log(data)
 
         const {data:users,errorFetch} = await supabase
-        .from('users')
+        .from('userData')
         .select('*')
         console.log(users,"users")
         
@@ -71,7 +71,7 @@ export default function RegisterationForm(){
         alert("Welcome to the family"+" "+data.name)
 
         const {errorInsert} = await supabase
-        .from('users')
+        .from('userData')
         .insert([
             {
                 enrollment_no:data.enrollment_no,
