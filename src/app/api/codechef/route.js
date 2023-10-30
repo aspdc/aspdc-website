@@ -18,9 +18,7 @@ import { NextResponse } from 'next/server'
 // }
 
 export const getStaticProps = async () => {
-    const data=await fetch("https://codechef-api.vercel.app/devvrat_singh2")
+    const data=await fetch("https://codeforces.com/api/user.info?handles=devvrat_singh2")
     const data2=await data.json()
-    return {
-        props: {userdata:data2}
-    }
+    return data2
 }
