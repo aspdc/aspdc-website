@@ -1,17 +1,14 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect,useState } from 'react';
-import supabase from '../../../../supabase';
-import codeforcesData from '../../lib/codeforcesData'
 
 export default function Codeforces(){
 
     const [cf,setCf]=useState([])
     const fetchUsers = async () => {
-        const cfData=await codeforcesData()
+        const cfData=await fetch('http://localhost:3000/api/codeforcesData').then(res => res.json())
         setCf(cfData)
 
     }   
-    console.log(cf,"cf") 
 
     useEffect(() => {
         fetchUsers()
@@ -33,6 +30,13 @@ export default function Codeforces(){
         maxRating:user.maxRating,
         maxRank:user.maxRank,
     }))
+    
+    const [sortModel, setSortModel] = useState([
+        {
+          field: 'rating',
+          sort: 'desc',
+        },
+      ]);
 
     return(
         <div className='w-fit m-auto'>
@@ -42,6 +46,9 @@ export default function Codeforces(){
                     columns={columns}
                     pageSize={5}
                     rowsPerPageOptions={[5]} 
+                    sortModel={sortModel}
+                    onSortModelChange={(model) => setSortModel(model)}
+
                 />
         </div>
     )

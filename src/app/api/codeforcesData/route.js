@@ -1,6 +1,6 @@
-import {getItem} from '../../utils/get-item'
-
-export default async function codeforcesData(req, res) {
+import {getItem} from '../../../utils/get-item'
+import { NextResponse } from 'next/server';
+export async function GET() {
     const data=await getItem()
     let cfData=[]
     for (let i = 0; i < data.data.length; i++) {
@@ -18,5 +18,5 @@ export default async function codeforcesData(req, res) {
             console.log(err,"err")
         }
     }
-    return cfData
+    return NextResponse.json(cfData)
 }

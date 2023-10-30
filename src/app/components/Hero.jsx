@@ -43,7 +43,7 @@ export default function Hero() {
                             Where Passion meets Programming
                         </div>
 
-                        <div onClick={scrollToAboutUs} className='w-fit m-auto' >
+                        <div onClick={scrollToAboutUs} className='w-fit mt-[32%] m-auto' >
                             <DownArrow/>
                         </div>
                     </div>

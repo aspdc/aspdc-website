@@ -1,18 +1,15 @@
 'use client'
 import { DataGrid } from '@mui/x-data-grid';
 import { useEffect,useState } from 'react';
-import leetcode from '../../lib/leetcodeData'
-
 
 export default function CodeChef(){
 
     
     const [users,setUsers]=useState([])
     const fetchUsers = async () => {
-        setUsers(await leetcode())
+        setUsers(await fetch('http://localhost:3000/api/leetcodeData').then(res => res.json()))
     }
 
-    console.log(users,"row clicked")
     useEffect(() => {
         fetchUsers()
     }, [])
@@ -39,7 +36,6 @@ export default function CodeChef(){
     const clickedCell=(e)=>{
         console.log(e,"cell clicked")
         console.log(e.row.username,"usernamess")
-
     }
 
     const [sortModel, setSortModel] = useState([

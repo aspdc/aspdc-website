@@ -1,7 +1,7 @@
+import {getItem} from '../../../utils/get-item'
+import { NextResponse } from 'next/server';
 
-import {getItem} from '../../utils/get-item'
-
-export default async function codeforcesData(req, res) {
+export async function GET() {
     const data=await getItem()
     let leetcodeData=[]
     for (let i = 0; i < data.data.length; i++) {
@@ -19,5 +19,5 @@ export default async function codeforcesData(req, res) {
             console.log(err,"err")
         }
     }
-    return leetcodeData
+    return NextResponse.json(leetcodeData)
 }
