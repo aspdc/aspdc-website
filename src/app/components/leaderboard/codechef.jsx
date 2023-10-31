@@ -5,7 +5,7 @@ export default function Codeforces(){
 
     const [codechefData,setCf]=useState([])
     const fetchUsers = async () => {
-        const cfData=await fetch('http://localhost:3000/api/codechefData').then(res => res.json())
+        const cfData=await fetch('../../api/codechefData').then(res => res.json())
         setCf(cfData)
 
     }   

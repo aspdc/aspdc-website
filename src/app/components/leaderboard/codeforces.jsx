@@ -5,7 +5,10 @@ export default function Codeforces(){
 
     const [cf,setCf]=useState([])
     const fetchUsers = async () => {
-        const cfData=await fetch('http://localhost:3000/api/codeforcesData').then(res => res.json())
+        const temp=await fetch('../../api/codeforcesData')
+        const cfData=await temp.json()
+
+        console.log(cfData,"cfDataaaaaaaa")
         setCf(cfData)
 
     }   
@@ -24,7 +27,7 @@ export default function Codeforces(){
     ]
     const rows=cf.map((user,key) => ({
         id:user.enrollment_no,
-        username:user.handle,
+        username:user.username,
         rating:user.rating,
         rank:user.rank,
         maxRating:user.maxRating,

@@ -7,7 +7,8 @@ import {poppins} from "../../page"
 import Codeforces from "@/app/components/leaderboard/codeforces"
 import Leetcode from "@/app/components/leaderboard/leetcode"
 import Codechef from "@/app/components/leaderboard/codechef"
-
+import Loading from "@/app/components/LoadingPage"
+import { Suspense } from "react"
 
 export default function Leaderboard() {
     
@@ -17,6 +18,7 @@ export default function Leaderboard() {
     }
 
     return(
+        <Suspense fallback={<Loading />}>
         <div className="w-fit h-screen">
 
             <div className="w-min m-auto text-black  ">
@@ -73,5 +75,6 @@ export default function Leaderboard() {
                 </div>
             </div>
         </div>
+        </Suspense>
     )
 }

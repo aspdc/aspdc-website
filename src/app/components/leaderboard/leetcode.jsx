@@ -7,7 +7,7 @@ export default function CodeChef(){
     
     const [users,setUsers]=useState([])
     const fetchUsers = async () => {
-        setUsers(await fetch('http://localhost:3000/api/leetcodeData').then(res => res.json()))
+        setUsers(await fetch('../../api/leetcodeData').then(res => res.json()))
     }
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function CodeChef(){
     const rows=users.map((user,key) => ({
         id:user.enrollment_no,
         username:user.username,
-        rank:user.ranking,
+        rank:user.rank,
         easySolved:user.easySolved,
         mediumSolved:user.mediumSolved,
         hardSolved:user.hardSolved,

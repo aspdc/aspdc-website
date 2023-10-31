@@ -1,10 +1,10 @@
 "use client"
 
 import React,{useEffect,useState,useRef} from 'react'
-import Navbar from "../components/Navbar"
+import Navbar from "../../Navbar"
 import DownArrow from './DownArrow'
 import { useInView } from 'react-intersection-observer'
-import About from './About'
+import About from '../about/About'
 
 export default function Hero() {
 

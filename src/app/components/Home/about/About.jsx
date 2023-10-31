@@ -1,4 +1,4 @@
-import {poppins} from "../page"
+import {poppins} from "../../../page"
 export default function About(){
     
     if (typeof window !== 'undefined') {

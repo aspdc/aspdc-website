@@ -1,5 +1,5 @@
 import MemberCard from "./MemberCard"
-import Footer from "./Footer"
+import Footer from "../../Footer"
 
 
 export default function Team(){

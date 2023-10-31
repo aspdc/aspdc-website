@@ -5,7 +5,8 @@ import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import supabase from "../../../supabase";
+import supabase from "../../../../supabase";
+import { dosis } from "../../page";
 
 export default function RegisterationForm(){
 
@@ -15,36 +16,28 @@ export default function RegisterationForm(){
     const schema=yup.object().shape({
         enrollment_no:yup.number().required(),
         name:yup.string().required(),
-        leetcode:yup.string().required(),
-        codeforces:yup.string().required(),
-        codechef:yup.string().required(),
-        github:yup.string().required(),
+        leetcode:yup.string(),
+        codeforces:yup.string(),
+        codechef:yup.string(),
+        github:yup.string(),
     })
     const {register,handleSubmit,formState:{errors}}=useForm({
         resolver:yupResolver(schema)
     })
     
-    
+        
+
     const submit = async (data) => {
         
-        console.log(data)
-
         const {data:users,errorFetch} = await supabase
         .from('userData')
         .select('*')
-        console.log(users,"users")
         
         const checkExistence = users.filter((user) => user.enrollment_no === data.enrollment_no)
         const checkExistenceName = users.filter((user) => user.leetcode_handle === data.leetcode)
         const checkExistenceCodeforces = users.filter((user) => user.codeforces_handle === data.codeforces)
         const checkExistenceCodechef = users.filter((user) => user.codechef_handle === data.codechef)
         const checkExistenceGithub = users.filter((user) => user.github_handle === data.github)
-
-        console.log(checkExistence,"checkExistence")
-        console.log(checkExistenceName,"checkExistenceName")
-        console.log(checkExistenceCodeforces,"checkExistenceCodeforces")
-        console.log(checkExistenceCodechef,"checkExistenceCodechef")
-        console.log(checkExistenceGithub,"checkExistenceGithub")
 
         if(checkExistence.length !== 0){
             alert("User already exists")
@@ -68,8 +61,22 @@ export default function RegisterationForm(){
         }
 
         
-        alert("Welcome to the family"+" "+data.name)
 
+        const getCfData=async()=>{
+            const codeforces = await fetch('../../api/postData',{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    data:data
+                })
+            })
+            const check=await codeforces.json()
+            console.log(check,"check")
+        }
+        
+        getCfData()
         const {errorInsert} = await supabase
         .from('userData')
         .insert([
@@ -82,7 +89,6 @@ export default function RegisterationForm(){
                 github_handle:data.github,
             }
         ])
-        
         console.log("hello")
     }
     
@@ -95,6 +101,16 @@ export default function RegisterationForm(){
         
     }
 
+    const [alertMsg,setAlertMsg] = useState("")
+    const baseAlertStyle = `absolute transition duration-500 top-10 h-[8%] px-10 flex font-semibold justify-center items-center text-center right-4 text-2xl bg-[#00CA08] ${dosis.className} opacity-0 `
+    const [alertStyle,setAlertStyle] = useState(baseAlertStyle)
+
+    const alerting=async(msg)=>{
+        setAlertStyle(baseAlertStyle+`opacity-100 transition duration-[2000ms] -translate-x-20 `)
+        setAlertMsg(msg)
+        await new Promise(r => setTimeout(r, 4000));
+        setAlertStyle(baseAlertStyle)
+    }
 
 
     return(
@@ -108,7 +124,6 @@ export default function RegisterationForm(){
                         variant="outlined"
                         {...register("enrollment_no")}
                         />  
-                    {/* <p>{errors.enrollment_no?.message}</p> */}
 
                     <TextField
                         id="name"
@@ -149,7 +164,6 @@ export default function RegisterationForm(){
                         onChange={selectPlatform}
                         value={platform}
                         className="text-black col-span-2"
-
                         >
                         <MenuItem value={"CSE"}>CSE</MenuItem>
                         <MenuItem value={"Civil"}>Civil</MenuItem>
@@ -157,6 +171,14 @@ export default function RegisterationForm(){
                     </Select>
                     <input type="submit" className="bg-blue-500 border-0 rounded h-12"/>
                 </form>
+
+                <Button onClick={alerting}>
+                    Click me
+                </Button>
+
+                <div className={alertStyle}>
+                    Welcome to the Club {}
+                </div>
             </div>
         </div>
     )

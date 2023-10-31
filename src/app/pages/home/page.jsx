@@ -1,6 +1,6 @@
-import About from "../../components/About"
-import Hero from "../../components/Hero"
-import Team from "../../components/Team"
+import About from "../../components/Home/about/About"
+import Hero from "../../components/Home/hero/Hero"
+import Team from "../../components/Home/team/Team"
 
 export default function Home() {
 
