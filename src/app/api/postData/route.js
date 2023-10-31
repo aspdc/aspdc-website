@@ -32,7 +32,7 @@ const leetcodePost=async (username,enrollment_no)=>{
         const { data, error } = await supabase
         .from('leetcode')
         .insert([
-            { enrollment_no: enrollment_no,username:username,rank:check2.ranking,easySolved:check2.easySolved,mediumSolved:check2.me diumSolved,hardSolved:check2.hardSolved,totalSolved:check2.totalSolved},
+            { enrollment_no: enrollment_no,username:username,rank:check2.ranking,easySolved:check2.easySolved,mediumSolved:check2.mediumSolved,hardSolved:check2.hardSolved,totalSolved:check2.totalSolved},
         ])
         if(error){
             console.log(error,"error")
