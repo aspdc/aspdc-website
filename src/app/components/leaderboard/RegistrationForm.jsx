@@ -1,6 +1,5 @@
 "use client"
-import { FormControl, FormControlLabel, TextField ,Select,MenuItem} from "@mui/material"
-import { FilledInput,Button } from '@mui/material';
+import {  TextField ,Select,MenuItem,Button} from "@mui/material"
 import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,9 +9,6 @@ import { dosis } from "../../page";
 
 export default function RegisterationForm(){
 
-    // Get filled inoput using materia ui
-    
-    
     const schema=yup.object().shape({
         enrollment_no:yup.number().required(),
         name:yup.string().required(),

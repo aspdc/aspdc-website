@@ -15,7 +15,7 @@ export default function Hero() {
     return(
         <div>
         <div>
-        <div className="home p-0 h-screen bg-black" >
+        <div className="home p-0  h-screen bg-black" >
             <div className="m-auto h-full">
                     <div>
                         <Navbar 

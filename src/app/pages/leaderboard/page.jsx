@@ -8,7 +8,13 @@ import Codeforces from "@/app/components/leaderboard/codeforces"
 import Leetcode from "@/app/components/leaderboard/leetcode"
 import Codechef from "@/app/components/leaderboard/codechef"
 import Loading from "@/app/components/LoadingPage"
-import { Suspense } from "react"
+import { Inter, Roboto_Mono } from 'next/font/google'
+ 
+export const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+ 
 
 export default function Leaderboard() {
     
@@ -18,19 +24,17 @@ export default function Leaderboard() {
     }
 
     return(
-        <Suspense fallback={<Loading />}>
-        <div className="w-fit h-screen">
-
-            <div className="w-min m-auto text-black  ">
+        <div className="h-screen">
+            <div className="w-[100%] m-auto text-black  ">
                 <div>
                     <Navbar 
                         textColour="text-white"
                         hoverColour="text-blue"
                         />
                 </div>
-                <div className={`${poppins.className} text-center w-fit m-auto`}>
+                <div className={` text-center w-fit m-auto`}>
                     <div className="flex mt-[4%] m-auto justify-between">
-                        <div className="w-fit" >
+                        <div className={`w-fit ${inter.className}`} >
                             <FormControl className="" >
                                 <InputLabel id="demo-simple-select-label">platform</InputLabel>
                                 <Select
@@ -51,7 +55,7 @@ export default function Leaderboard() {
                         </div>
                         <div>
                             <Link href={"/pages/leaderboard/register"} >
-                                <Button type="outlined-filled" className="bg-[#013D00] text-white h-full hover:bg-green-500" >
+                                <Button variant="contained" className="text-poppins h-full" color="success" >
                                     Register
                                 </Button>
                             </Link>
@@ -75,6 +79,5 @@ export default function Leaderboard() {
                 </div>
             </div>
         </div>
-        </Suspense>
     )
 }

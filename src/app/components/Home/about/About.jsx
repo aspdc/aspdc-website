@@ -1,11 +1,8 @@
+'use client'
 import {poppins} from "../../../page"
+
 export default function About(){
     
-    if (typeof window !== 'undefined') {
-        const hehe=localStorage.getItem("users")
-        console.log(JSON.parse(hehe),"hehe")
-    }
-
     const scrollToTeam=()=>{
         window.scrollTo({
             top:window.innerHeight,

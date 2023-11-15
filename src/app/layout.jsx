@@ -15,12 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-            <html lang="en" >
-                <body className={`w-screen h-screen p-0 m-0 overflow-x-hidden scale-100 ${inter.className}`}>
+            <html lang="en">
+                <body className={`w-[100%] p-0 m-0 scale-100 ${inter.className}`}>
                     <NextTopLoader
                         color='#42b883'
                     />
-
                     {children}
                 </body>
             </html>
