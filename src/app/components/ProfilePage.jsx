@@ -4,8 +4,8 @@ import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import supabase from "../../../../supabase";
-import { dosis } from "../../page";
+import supabase from "../../../supabase";
+import { dosis } from "../page";
 
 export default function RegisterationForm(){
 

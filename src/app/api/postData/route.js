@@ -65,8 +65,6 @@ const codechefPost=async (username,enrollment_no)=>{
         return {error:null}
     }
     else{
-        // fetchingCodechefData.error=null
-        // console.log("failur1e")
         return {error:"codechefApi"}
     }
 }
