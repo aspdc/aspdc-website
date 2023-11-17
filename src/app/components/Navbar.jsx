@@ -1,21 +1,19 @@
-'use client'
 import Link from "next/link"
 import { UserButton } from "@clerk/nextjs";
 import {BiLogIn} from "react-icons/bi"
 import { useUser } from "@clerk/nextjs";
-import { useState } from "react";
 
 export default function Navbar(props) {
-    const [style,setStyle]=useState("hover:text-white duration-200")
+    const style="hover:text-white duration-200"
     const {isSignedIn,user} = useUser();
 
 
 
-    const addPulse=(e)=>{
-        e.target.classList.add("animate-pulse-once")
-        console.log(e.target.class)
+    // const addPulse=(e)=>{
+    //     e.target.classList.add("animate-pulse-once")
+    //     console.log(e.target.class)
         
-    }
+    // }
 
 
     return(
@@ -27,7 +25,7 @@ export default function Navbar(props) {
                     </div>
                 </Link>
                 <div className={`text ${props.textColour} flex gap-10 items-center font-light text-[100%]`}>
-                    <Link href="/" className={style} onClick={addPulse} id="home" >Home</Link>
+                    <Link href="/" className={style} id="home" >Home</Link>
                     <Link href="/pages/events" className={style}  id="events">Events</Link>
                     <Link href="/pages/resources" className={style} id="resources"  >Resources</Link>
                     <Link href="/pages/gallery" className={style} id="gallery"  >Gallery</Link>
@@ -48,7 +46,7 @@ export default function Navbar(props) {
                 }
                 {
                     (!isSignedIn) && 
-                    <Link href={"/pages/sign-in"} >
+                    <Link href={"/pages/sign-up"} >
                         <div className="w-fit  text-gray-300 px-[30%] flex  ">
                             Login
                             <BiLogIn className="border-4 border-hidden m-auto text-[120%]"/>

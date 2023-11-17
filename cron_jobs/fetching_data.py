@@ -52,7 +52,6 @@ def fetch_codechef_data(username,enrollment):
 
     if response.status_code == 200:
         data = response.json()
-
         supabase={
             "enrollment_no":enrollment ,
             "username":username,
