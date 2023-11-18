@@ -1,6 +1,7 @@
 'use client'
 import {poppins} from "../../../page"
 
+import { dosis } from "../../../page";
 export default function About(){
     
     const scrollToTeam=()=>{
@@ -10,8 +11,8 @@ export default function About(){
         })
     }
     return(
-            <div className={`h-fit w-[50%] text-[100%] ${poppins.className} m-auto`}>
-                <div className="about-us m-auto text-[330%] font-regular  w-fit ">
+            <div className={`h-fit w-[50%] text-[100%] ${poppins.className} opacity-90 m-auto`}>
+                <div className={`about-us m-auto text-[330%] font-regular ${dosis.className} w-fit`}>
                     About Us
                 </div>
                 <div className="mt-[5%] text-[125%]">
@@ -23,7 +24,7 @@ export default function About(){
                         ASPDC! 
                     </span>
                 </div>
-                <div className="text-center text-[330%] mt-[60%] m-auto font-poppins " onClick={scrollToTeam} > 
+                <div className={`text-center ${dosis.className} text-[330%] mt-[60%] m-auto `} onClick={scrollToTeam} > 
                     Meet The Team
                 </div>
                 <div className="w-[50%] m-auto"> 

@@ -32,24 +32,26 @@ export default function Navbar(props) {
                     <Link href="/pages/projects" className={style} id="projects"  >Projects</Link>
                     <Link href="/pages/leaderboard" className={style} id="leaderboard" >Leaderboard</Link>
                 </div>
-                <div className="flex items-center">
+                <div className="flex  items-center">
 
                 { (isSignedIn) &&
-                    <div className="items-center text-white h-16 flex ">
+                    <div className="items-center gap-2  text-white h-16 flex ">
+                        <Link href={"/pages/profile"}>
+                            <div className="">
+                                {user.firstName}
+                            </div>
+                        </Link>
                         <div className="">
                             <UserButton className="" afterSignedOutUrl="/" />
-                        </div>
-                        <div className="">
-                            {user.firstName}
                         </div>
                     </div>
                 }
                 {
                     (!isSignedIn) && 
-                    <Link href={"/pages/sign-up"} >
-                        <div className="w-min text-gray-300 px-[30%] flex">
+                    <Link href={"/sign-in"} className="" >
+                        <div className="w-fit  text-gray-300 px-[30%] flex  ">
                             Login
-                            <BiLogIn className="border-4 w-fit border-hidden m-auto text-[120%]"/>
+                            <BiLogIn className="border-4 w-min border-hidden m-auto text-[120%]"/>
                         </div>
                     </Link>
                 }
