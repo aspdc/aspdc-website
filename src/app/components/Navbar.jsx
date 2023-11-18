@@ -18,7 +18,7 @@ export default function Navbar(props) {
 
     return(
         // <div className="bg-[#013D00]">
-            <div className={`gap-[20%] justify-around w-[100%] bg-[#013D00] h-16 flex item-center`}>
+            <div className={`gap-20 justify-around w-[100%] bg-transparent h-16 flex item-center`}>
                 <Link href="/">
                     <div className="logo text-[40px] hover:cursor-pointer text-[#00CA08] animate-pulse font-regular ">
                         {"</>"}

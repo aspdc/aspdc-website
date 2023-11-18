@@ -16,15 +16,15 @@ export default function Hero() {
     return(
         <div>
         <div>
-        <div className="home p-0  h-screen bg-black" >
-            <div className="m-auto h-full">
-                    <div>
-                        <Navbar 
-                            textColour='text-gray-300'
-                            hoverColour='text-black'
-                            />
-                    </div>
-                    <div className="w-fit mt-[2%] m-auto flex-col text-white text-center min-[1537px]:translate-y-[13%] delay-500">
+        <div className="home p-0  bg-white bg-gradient-to-b from-[#3A1C71] via-[#D76D77] to-[#FFAF7B]" >
+            <div>
+                <Navbar 
+                    textColour='text-gray-300'
+                    hoverColour='text-black'
+                    />
+            </div>
+            <div className="m-auto h-screen">
+                    <div className="w-fit mt-[2%] m-auto flex-col text-black text-center min-[1537px]:translate-y-[13%] delay-500">
                         <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                             {"</>"}
                         </div>
@@ -35,7 +35,7 @@ export default function Hero() {
                             <div className="w-[40%] m-auto">
                                 <hr />
                             </div>
-                            <div className="text-[150%] font-thin ">
+                            <div className="text-[150%] font-light ">
                                 ASPDC
                             </div>
 
@@ -44,7 +44,7 @@ export default function Hero() {
                             Where Passion meets Programming
                         </div>
 
-                        <div onClick={scrollToAboutUs} className='w-fit min-[1537px]:mt-[32%] min-[1537px]:bg-black bg-white m-auto' >
+                        <div onClick={scrollToAboutUs} className='w-fit 1920:mt-[32%] xl:mt-[32%] m-auto' >
                             <DownArrow/>
                         </div>
                     </div>
