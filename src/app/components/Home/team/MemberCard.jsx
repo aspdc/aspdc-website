@@ -16,18 +16,10 @@ export default function MemberCard(props){
 
     useEffect(()=>{
         if(inView){
-            if (flipCount%2===1){
-                setFlipCount(flipCount+1)
-                setStyle("flip-inner h-full w-full duration-1000 relative shadow-sm [transform:rotateY(0deg)] [transform-style:preserve-3d]")
-            }
-            else if (flipCount%2===0){
-                setFlipCount(flipCount+1)
-                setStyle("flip-inner h-full w-full duration-1000 relative shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
-            }
-            else{
-                // setFlipCount(flipCount+1)
-                setStyle("flip-inner h-full w-full duration-1000 relative shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
-            }
+            setStyle("flip-inner h-full w-full duration-1000 relative shadow-sm [transform:rotateY(180deg)] [transform-style:preserve-3d]")
+        }
+        else{
+            setStyle("flip-inner h-full w-full duration-1000 relative shadow-sm [transform:rotateY(0deg)] [transform-style:preserve-3d]")
         }
     },[inView])
 

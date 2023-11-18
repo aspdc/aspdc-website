@@ -32,7 +32,7 @@ export default function Navbar(props) {
                     <Link href="/pages/projects" className={style} id="projects"  >Projects</Link>
                     <Link href="/pages/leaderboard" className={style} id="leaderboard" >Leaderboard</Link>
                 </div>
-                <div className="flex  items-center">
+                <div className="flex -translate-x-2  items-center">
 
                 { (isSignedIn) &&
                     <div className="items-center gap-2  text-white h-16 flex ">

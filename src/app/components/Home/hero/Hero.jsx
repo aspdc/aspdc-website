@@ -5,6 +5,7 @@ import Navbar from "../../Navbar"
 import DownArrow from './DownArrow'
 import { useInView } from 'react-intersection-observer'
 import About from '../about/About'
+// import katibeh
 
 export default function Hero() {
 
@@ -23,7 +24,7 @@ export default function Hero() {
                             hoverColour='text-black'
                             />
                     </div>
-                    <div className="w-fit mt-[2%] m-auto flex-col text-white text-center translate-y-[13%] delay-500">
+                    <div className="w-fit mt-[2%] m-auto flex-col text-white text-center min-[1537px]:translate-y-[13%] delay-500">
                         <div className="text-[1000%] text-[#00CA08] m-auto animate-pulse">
                             {"</>"}
                         </div>
@@ -43,7 +44,7 @@ export default function Hero() {
                             Where Passion meets Programming
                         </div>
 
-                        <div onClick={scrollToAboutUs} className='w-fit mt-[32%] m-auto' >
+                        <div onClick={scrollToAboutUs} className='w-fit min-[1537px]:mt-[32%] min-[1537px]:bg-black bg-white m-auto' >
                             <DownArrow/>
                         </div>
                     </div>
