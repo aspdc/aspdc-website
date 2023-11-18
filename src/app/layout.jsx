@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
             <html lang="en">
-                <body className={`w-[100%] p-0 m-0 scale-100 ${inter.className}`}>
+                <body className={`w-[100%] m-0 scale-100 ${inter.className}`}>
                     <NextTopLoader
                         color='#42b883'
                     />

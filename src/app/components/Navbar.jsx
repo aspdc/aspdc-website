@@ -47,9 +47,9 @@ export default function Navbar(props) {
                 {
                     (!isSignedIn) && 
                     <Link href={"/pages/sign-up"} >
-                        <div className="w-fit  text-gray-300 px-[30%] flex  ">
+                        <div className="w-min text-gray-300 px-[30%] flex">
                             Login
-                            <BiLogIn className="border-4 border-hidden m-auto text-[120%]"/>
+                            <BiLogIn className="border-4 w-fit border-hidden m-auto text-[120%]"/>
                         </div>
                     </Link>
                 }
